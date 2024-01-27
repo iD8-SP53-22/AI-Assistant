@@ -6,7 +6,7 @@ accelerate
 bitsandbytes
 transformers
 sentence_transformers
-faiss_cpu
+faiss-cpu
 pyaudio
 keyboard
 SpeechRecognition
