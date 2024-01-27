@@ -34,5 +34,5 @@ Here are the steps to actually activate everything.
 4. Run the ingest.py file and wait a few minutes, a folder named vectorstores should have been created containing both the .pkl and .faiss files
 5. After which directly run the main.py file and everything should run decently well
 
-P.S. If you run the main.py file ignore the warnings about langchain depreciating and asking you to install the community version, it is inconsequential.
-P.S.S. I ignored a lotta shit, don't pay too much attention to it, it's mostly things you gotta get yourself to make this work.
+* P.S. If you run the main.py file ignore the warnings about langchain depreciating and asking you to install the community version, it is inconsequential.
+* P.S.S. I ignored a lotta shit, don't pay too much attention to it, it's mostly things you gotta get yourself to make this work.
