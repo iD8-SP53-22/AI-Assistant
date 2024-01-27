@@ -1,0 +1,14 @@
+data
+vectorstores
+__pycache__
+speech_to_text.txt
+pyvenv.cfg
+input.wav
+Lib
+Scripts
+.chainlit
+.files
+include
+share
+chainlit.md
+llama-2-7b-chat.ggmlv3.q8_0.bin
