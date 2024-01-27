@@ -1,8 +1,12 @@
 pypdf
 langchain
 torch
+ctransformers
 accelerate
 bitsandbytes
 transformers
 sentence_transformers
 faiss_cpu
+pyaudio
+keyboard
+SpeechRecognition
