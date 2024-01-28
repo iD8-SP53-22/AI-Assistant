@@ -1,5 +1,5 @@
 from langchain import PromptTemplate
-# from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.embeddings import HuggingFaceEmbeddings
 from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 from langchain.vectorstores import FAISS 
 from langchain.llms import CTransformers
@@ -52,6 +52,8 @@ class Model:
 
     def qa_bot():
         embeddings = FastEmbedEmbeddings()
+        # embeddings = HuggingFaceEmbeddings(model_name = 'sentence-transformers/all-MiniLM-L6-v2', model_kwargs = {'device' : 'cpu'})
+
 
         db = FAISS.load_local(DB_FAISS_PATH, embeddings)
         llm = Model.load_llm()

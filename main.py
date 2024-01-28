@@ -15,6 +15,8 @@ def main():
             TTS.play_audio()
         else:
             print("Stopping...")
+        TTS.text_to_speech("Please ask your next question")
+        TTS.play_audio()
         text = record_audio()
     TTS.text_to_speech("stopping program")
     TTS.play_audio()
