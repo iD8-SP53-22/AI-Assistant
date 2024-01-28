@@ -11,4 +11,5 @@ Scripts
 include
 share
 chainlit.md
+audio.mp3
 llama-2-7b-chat.ggmlv3.q8_0.bin

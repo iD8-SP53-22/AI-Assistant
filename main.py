@@ -1,5 +1,6 @@
 from model import Model
 from speech_to_text import STT
+from text_to_speech import TTS
 
 stop_commands = ["Stop", "stop", "cease", "Cease"]
 
@@ -8,10 +9,15 @@ def main():
     while text not in stop_commands:
         if text not in stop_commands:
             response = Model.final_result(text)
-            print(response["result"])
+            result = response["result"]
+            print(result)
+            TTS.text_to_speech(result)
+            TTS.play_audio()
         else:
             print("Stopping...")
         text = record_audio()
+    TTS.text_to_speech("stopping program")
+    TTS.play_audio()
     print("Stopping...")
 
 def record_audio():
