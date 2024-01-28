@@ -2,7 +2,7 @@ from model import Model
 from speech_to_text import STT
 from text_to_speech import TTS
 
-stop_commands = ["Stop", "stop", "cease", "Cease"]
+stop_commands = ["Stop", "stop", "cease", "Cease","terminate", "Terminate"]
 
 def main():
     text = record_audio()
