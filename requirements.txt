@@ -10,3 +10,5 @@ pyaudio
 keyboard
 SpeechRecognition
 fastembed
+gTTS
+playsound==1.2.2
