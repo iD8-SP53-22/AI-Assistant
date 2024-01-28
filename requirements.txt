@@ -1,6 +1,5 @@
 pypdf
 langchain
-torch
 ctransformers
 accelerate
 bitsandbytes
@@ -10,3 +9,4 @@ faiss-cpu
 pyaudio
 keyboard
 SpeechRecognition
+fastembed

@@ -25,5 +25,5 @@ def record_audio():
     data = open("speech_to_text.txt", "r")
     text = data.read()
     return text
-    
+
 main()
