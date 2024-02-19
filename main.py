@@ -1,4 +1,3 @@
-from model import Model
 from openai import OpenAI
 from speech_to_text import STT
 from text_to_speech import TTS
@@ -31,7 +30,7 @@ def main():
             with open('ai_responses.txt', 'w') as file:
                 file.write(new_message["content"] + "\n")
             history.append(new_message)
-            TTS.text_to_speech("Please ask your next question")
+            TTS.text_to_speech(new_message["content"])
             TTS.play_audio()
             text = record_audio()
             history.append({"role": "user", "content": text})
