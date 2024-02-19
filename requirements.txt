@@ -11,4 +11,6 @@ keyboard
 SpeechRecognition
 fastembed
 gTTS
+openai
+pygame
 playsound==1.2.2

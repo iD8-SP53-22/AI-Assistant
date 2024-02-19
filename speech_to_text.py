@@ -15,7 +15,7 @@ class STT:
         p = pyaudio.PyAudio()
         stream = p.open(format=format, channels=channels, rate=sample_rate, input=True, frames_per_buffer=chunk)
 
-        print("Press and Hold the Shift Key to Record...")
+        print(f"\nPress and Hold the Shift Key to Record...")
         frames=[]
 
         keyboard.wait('shift')
