@@ -32,6 +32,8 @@ def main():
             history.append(new_message)
             # TTS.text_to_speech(new_message["content"])
             # TTS.play_audio()
+            data = open("ai_responses.txt", "r")
+            text = data.read()
             TTS.EL_TTS(text)
             text = input(f"\n>")
             history.append({"role": "user", "content": text})
