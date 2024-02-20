@@ -3,6 +3,8 @@ from speech_to_text import STT
 from text_to_speech import TTS
 
 stop_commands = ["terminate", "Terminate"]
+special_char = ["!","~","@","#","$","%","^","&","*","(",")","-","_","=","+",",","{","]","[","]","|",";",":","'","<",">","?","/","`",",","."]
+nums = ["1","2","3","4","5","6","7","8","9","0"]
 # Point to the local server
 client = OpenAI(base_url="http://localhost:1234/v1", api_key="not-needed")
 
@@ -30,9 +32,9 @@ def main():
             with open('ai_responses.txt', 'w') as file:
                 file.write(new_message["content"] + "\n")
             history.append(new_message)
-            TTS.text_to_speech(new_message["content"])
-            TTS.play_audio()
-            text = input(f"\n> ")
+            # TTS.text_to_speech(new_message["content"])
+            # TTS.play_audio()
+            text = validate_input()
             history.append({"role": "user", "content": text})
         else:
             print("Stopping...")
@@ -50,6 +52,16 @@ def record_audio():
         print("Failed to convert audio to text")
     data = open("speech_to_text.txt", "r")
     text = data.read()
+    return text
+
+def validate_input():
+    text = input(f"\n>")
+    for i in range(0, len(text)):
+        if text[i] in special_char or text[i] in nums:
+            print(f"Unauthorized Characters detected, please enter a new prompt")
+            text = validate_input()
+        else:
+            pass
     return text
 
 main()
