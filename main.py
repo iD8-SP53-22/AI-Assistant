@@ -34,7 +34,7 @@ def main():
             history.append(new_message)
             # TTS.text_to_speech(new_message["content"])
             # TTS.play_audio()
-            text = validate_input()
+            text = input(f"\n>")
             history.append({"role": "user", "content": text})
         else:
             print("Stopping...")
@@ -56,12 +56,18 @@ def record_audio():
 
 def validate_input():
     text = input(f"\n>")
-    for i in range(0, len(text)):
-        if text[i] in special_char or text[i] in nums:
-            print(f"Unauthorized Characters detected, please enter a new prompt")
-            text = validate_input()
-        else:
-            pass
+    detector = 1
+    while detector >= 1:
+        detector = 1
+        for i in range(0, len(text)):
+            print(f"index: {i}")
+            print(f" index : {i}, letter: {text[i]}")
+            if text[i] in special_char or text[i] in nums:
+                print(f"Unauthorized Characters detected, please enter a new prompt")
+                detector = 1
+                text = input(f"\n>")
+            else:
+                detector = 0
     return text
 
 main()
