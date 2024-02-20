@@ -2,7 +2,7 @@ from openai import OpenAI
 from speech_to_text import STT
 from text_to_speech import TTS
 
-stop_commands = ["Stop", "stop", "cease", "Cease","terminate", "Terminate"]
+stop_commands = ["terminate", "Terminate"]
 # Point to the local server
 client = OpenAI(base_url="http://localhost:1234/v1", api_key="not-needed")
 
@@ -26,13 +26,13 @@ def main():
             for chunk in completion:
                 if chunk.choices[0].delta.content:
                     print(chunk.choices[0].delta.content, end="", flush=True)
-                    new_message["content"] += chunk.choices[0].delta.content
+                    new_message["content"] += chunk.choices[0].delta.content                                                                                                                                        
             with open('ai_responses.txt', 'w') as file:
                 file.write(new_message["content"] + "\n")
             history.append(new_message)
             TTS.text_to_speech(new_message["content"])
             TTS.play_audio()
-            text = record_audio()
+            text = input(f"\n> ")
             history.append({"role": "user", "content": text})
         else:
             print("Stopping...")
