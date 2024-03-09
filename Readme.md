@@ -25,7 +25,7 @@ Manged to figure out how to use Llama2 also managed to connect the speech to tex
 Here are the steps to actually activate everything.
 
 1. Create a virtual environment through your terminal, a Python Venv is good enough, I dunno how to use Condaenv, even if it can make everything much more efficient
-2. Within the directory pull the git branch 'albert-branch'
+2. Within the directory pull the git branch 'main'
 3. pip install the requirements.txt file through inputting 'pip install -r requirements.txt' in the terminal
 4. Download the llama-2-7b-chat.ggmlv3.q8_0.bin file from https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/tree/main and place it in the project directory
 5. Create a data folder and insert the PDF file you want the AI to learn from, it must be in PDF and the folder must be named 'data'
